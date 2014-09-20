@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
+gem 'slim', '~> 2.0.3'
+gem 'slim-rails', '~> 2.1.5'
 
 gem 'elasticsearch-rails', '~> 0.1.5'
 
