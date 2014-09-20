@@ -27,7 +27,8 @@ gem 'elasticsearch-rails', '~> 0.1.5'
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 1.1.3'
+  gem 'spring-commands-rspec', '~> 1.0.2'
 end
 
 # Use ActiveModel has_secure_password
