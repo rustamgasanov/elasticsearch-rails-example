@@ -37,6 +37,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     diff-lcs (1.2.5)
+    elasticsearch-rails (0.1.5)
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
@@ -131,6 +132,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  elasticsearch-rails (~> 0.1.5)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.4)
