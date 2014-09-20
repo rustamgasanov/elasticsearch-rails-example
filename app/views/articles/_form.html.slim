@@ -1,0 +1,14 @@
+= form_for @article, html: { class: "form form-horizontal article" } do |f|
+  .form-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :class => 'form-control'
+    = error_span(@article[:title])
+  .form-group
+    = f.label :content, :class => 'control-label'
+    .controls
+      = f.text_field :content, :class => 'form-control'
+    = error_span(@article[:content])
+  = f.submit nil, :class => 'btn btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), articles_path, :class => 'btn'
