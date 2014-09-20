@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Filling the database with articles.."
+1.upto(1000) do |i|
+  print "#{ i } "
+  Article.create(:title => Faker::Lorem.word, :content => Faker::Lorem.paragraph)
+end
+puts
+puts "Completed"

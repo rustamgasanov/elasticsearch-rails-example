@@ -28,6 +28,7 @@ gem 'less-rails', '~> 2.5.0'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'slim', '~> 2.0.3'
 gem 'slim-rails', '~> 2.1.5'
+gem 'faker', '~> 1.4.3'
 
 gem 'elasticsearch-rails', '~> 0.1.5'
 
