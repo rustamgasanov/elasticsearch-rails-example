@@ -29,6 +29,7 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'slim', '~> 2.0.3'
 gem 'slim-rails', '~> 2.1.5'
 gem 'faker', '~> 1.4.3'
+gem 'will_paginate', '~> 3.0.7'
 
 gem 'elasticsearch-rails', '~> 0.1.5'
 
