@@ -32,6 +32,7 @@ gem 'faker', '~> 1.4.3'
 gem 'will_paginate', '~> 3.0.7'
 
 gem 'elasticsearch-rails', '~> 0.1.5'
+gem 'elasticsearch-model', '~> 0.1.5'
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
