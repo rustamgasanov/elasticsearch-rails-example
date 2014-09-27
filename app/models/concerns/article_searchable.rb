@@ -10,7 +10,7 @@ module ArticleSearchable
 
     # Customize the JSON serialization for Elasticsearch
     def as_indexed_json(options = {})
-      attributes.merge({ 'tags' => tags.join(',') })
+      attributes.merge({ 'tags' => tags.map(&:name).join(',') })
     end
 
     def self.search(query, options={})

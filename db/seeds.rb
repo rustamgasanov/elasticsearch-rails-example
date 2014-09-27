@@ -6,22 +6,39 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Article.delete_all
-Tag.delete_all
+puts "Removing current entities if any..."
+# Article.delete_all
+# Tag.delete_all
+# hack, delete_all doesn't destroy elastic entities
+Article.find_each do |a|
+  a.destroy
+end
 
-puts "Filling the database with articles.."
-1.upto(1000) do |i|
-  print "#{ i } "
-  Article.create(:title => Faker::Lorem.word, :content => Faker::Lorem.paragraph)
+Tag.find_each do |t|
+  t.destroy
 end
 
 puts
-puts "tags.."
+puts "Filling the database with tags..."
 
 [:foo, :bar, :baz].each do |tag|
   print "#{ tag } "
   Tag.create(:name => tag)
 end
+
+puts
+puts "Filling the database with articles..."
+
+1.upto(1000) do |i|
+  print "#{ i }"
+  article = Article.new(:title => Faker::Lorem.word, :content => Faker::Lorem.paragraph)
+  Tag.all.each do |tag|
+    article.tags << tag if rand(2) == 0
+  end
+  print "(#{ article.tags.map(&:name).join(',') }) "
+  article.save
+end
+
 
 puts
 puts "Completed"
