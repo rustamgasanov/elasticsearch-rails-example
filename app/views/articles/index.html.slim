@@ -1,9 +1,10 @@
 - model_class = Article
 div class="page-header"
   h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+
 = form_tag articles_path, method: :get do
   = label_tag :q, "Search for:"
-  = text_field_tag :q
+  = text_field_tag :q, params[:q]
   = submit_tag "Search"
   
 table class="table table-striped"
