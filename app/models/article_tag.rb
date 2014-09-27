@@ -1,4 +1,4 @@
 class ArticleTag < ActiveRecord::Base
-  belongs_to :article_id
-  belongs_to :tag_id
+  belongs_to :article
+  belongs_to :tag
 end
