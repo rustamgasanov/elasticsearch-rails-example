@@ -6,10 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Article.delete_all
+Tag.delete_all
+
 puts "Filling the database with articles.."
 1.upto(1000) do |i|
   print "#{ i } "
   Article.create(:title => Faker::Lorem.word, :content => Faker::Lorem.paragraph)
 end
+
+puts
+puts "tags.."
+
+[:foo, :bar, :baz].each do |tag|
+  print "#{ tag } "
+  Tag.create(:name => tag)
+end
+
 puts
 puts "Completed"
