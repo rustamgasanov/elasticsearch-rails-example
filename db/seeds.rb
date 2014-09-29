@@ -7,16 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "Removing current entities if any..."
-# Article.delete_all
-# Tag.delete_all
-# hack, delete_all doesn't destroy elastic entities
-Article.find_each do |a|
-  a.destroy
-end
-
-Tag.find_each do |t|
-  t.destroy
-end
+Article.destroy_all
+Tag.destroy_all
 
 puts
 puts "Filling the database with tags..."
