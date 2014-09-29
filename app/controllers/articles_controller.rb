@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.search(params[:q]).paginate(:page => params[:page], :per_page => 20)
+    @tags = Tag.all
   end
 
   # GET /articles/1

@@ -5,8 +5,13 @@ div class="page-header"
 .row
   .col-md-2
     = form_tag articles_path, method: :get do
-      = label_tag :q, "Search for:"
-      = text_field_tag :q, params[:q]
+      .form-group
+        = label_tag :q, "Search for:"
+        = text_field_tag :q, params[:q]
+      - @tags.each do |tag|
+        .checkbox
+          = check_box_tag 'tags[]', tag.name
+          = h tag.name
       = submit_tag "Search"
     
   .col-md-10
