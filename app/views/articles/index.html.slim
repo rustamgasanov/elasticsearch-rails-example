@@ -8,11 +8,13 @@ div class="page-header"
       .form-group
         = label_tag :q, "Search for:"
         = text_field_tag :q, params[:q], :class => 'form-control'
-      - @tags.each do |tag|
-        .checkbox
-          label
-            = check_box_tag 'tags[]', tag.name, params[:tags].include?(tag.name)
-            = h tag.name
+      .form-group
+        = label_tag 'tags[]', "Tagged:"
+        - @tags.each do |tag|
+          .checkbox
+            label
+              = check_box_tag 'tags[]', tag.name, params[:tags].include?(tag.name)
+              = h tag.name
       = submit_tag "Search"
     
   .col-md-10
