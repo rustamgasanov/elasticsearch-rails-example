@@ -6,16 +6,16 @@ div class="page-header"
   .col-md-2
     = form_tag articles_path, method: :get, :role => 'form' do
       .form-group
-        = label_tag :q, "Search for:"
+        = label_tag :q, 'Search for:'
         = text_field_tag :q, params[:q], :class => 'form-control'
       .form-group
-        = label_tag 'tags[]', "Tagged:"
+        = label_tag 'tags[]', 'Tagged:'
         - @tags.each do |tag|
           .checkbox
             label
               = check_box_tag 'tags[]', tag.name, params[:tags].include?(tag.name)
               = h tag.name
-      = submit_tag "Search"
+      = submit_tag "Search", :class => 'btn btn-default'
     
   .col-md-10
     table class="table table-striped"
