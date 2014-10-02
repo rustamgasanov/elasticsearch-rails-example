@@ -11,7 +11,7 @@ div class="page-header"
       - @tags.each do |tag|
         .checkbox
           label
-            = check_box_tag 'tags[]', tag.name
+            = check_box_tag 'tags[]', tag.name, params[:tags].include?(tag.name)
             = h tag.name
       = submit_tag "Search"
     
