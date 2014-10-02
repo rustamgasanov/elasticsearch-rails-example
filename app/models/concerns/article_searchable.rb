@@ -51,6 +51,14 @@ module ArticleSearchable
         sort = { created_at: 'desc' }
       end
 
+      if options[:tags].present?
+        filters << {
+          terms: {
+            tags: options[:tags]
+          }
+        }
+      end
+
       if filters.present?
         @search_definition[:filter] = {
           and: filters
